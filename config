@@ -1,4 +1,6 @@
 ngx_addon_name=ngx_stream_server_traffic_status_module
+have=NGX_STREAM_STS_STATUS . auto/have
+CORE_INCS="$CORE_INCS $ngx_addon_dir/src/"
 
 STREAM_STS_SRCS=" \
                  $ngx_addon_dir/src/ngx_stream_server_traffic_status_module.c    \

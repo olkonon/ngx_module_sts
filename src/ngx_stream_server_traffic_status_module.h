@@ -2,8 +2,6 @@
 /*
  * Copyright (C) YoungJoo Kim (vozlt)
  */
-
-
 #ifndef _NGX_STREAM_STS_MODULE_H_INCLUDED_
 #define _NGX_STREAM_STS_MODULE_H_INCLUDED_
 

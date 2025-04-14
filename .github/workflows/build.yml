@@ -1,0 +1,17 @@
+name: Build
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install environment
+        run: 'sudo apt install -y libpcre2-dev zlib1g-dev wget'
+      - name: Build
+        run: './build.sh'
+      - run: echo "This job's status is ${{ job.status }}."
