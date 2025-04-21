@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR="$(pwd)"
-NGINX_VERSION="1.27.4"
+NGINX_VERSION="1.27.5"
 
 echo "Nginx version $NGINX_VERSION"
 echo "Directory: $DIR"
