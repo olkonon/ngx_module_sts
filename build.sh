@@ -13,5 +13,5 @@ mv nginx-${NGINX_VERSION}/* $DIR/buildnginx/
 mv src  $DIR/buildnginx/modules/ngx_module_sts/
 mv config  $DIR/buildnginx/modules/ngx_module_sts/
 cd $DIR/buildnginx
-./configure --with-cc-opt='-g -O2 -fstack-protector-strong -Wformat -Werror=format-security' --with-stream --add-module=./modules/ngx_module_sts/
+./configure --with-cc-opt='-g -O2 -fstack-protector-strong -Wformat -Werror=format-security' --with-stream  --with-http_stub_status_module --add-module=./modules/ngx_module_sts/
 make -j12
