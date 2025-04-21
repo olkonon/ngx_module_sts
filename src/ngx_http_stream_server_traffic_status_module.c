@@ -23,14 +23,6 @@ static char *ngx_http_stream_server_traffic_status_merge_loc_conf(ngx_conf_t *cf
     void *parent, void *child);
 
 
-static ngx_conf_enum_t  ngx_http_stream_server_traffic_status_display_format[] = {
-    { ngx_string("json"), NGX_HTTP_STREAM_SERVER_TRAFFIC_STATUS_FORMAT_JSON },
-    { ngx_string("html"), NGX_HTTP_STREAM_SERVER_TRAFFIC_STATUS_FORMAT_HTML },
-    { ngx_string("jsonp"), NGX_HTTP_STREAM_SERVER_TRAFFIC_STATUS_FORMAT_JSONP },
-    { ngx_string("prometheus"), NGX_HTTP_STREAM_SERVER_TRAFFIC_STATUS_FORMAT_PROMETHEUS },
-    { ngx_null_string, 0 }
-};
-
 
 static ngx_conf_enum_t  ngx_http_stream_server_traffic_status_average_method_post[] = {
     { ngx_string("AMM"), NGX_HTTP_STREAM_SERVER_TRAFFIC_STATUS_AVERAGE_METHOD_AMM },
@@ -53,27 +45,6 @@ static ngx_command_t ngx_http_stream_server_traffic_status_commands[] = {
       ngx_http_stream_server_traffic_status_zone,
       0,
       0,
-      NULL },
-
-    { ngx_string("stream_server_traffic_status_display"),
-      NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_CONF_NOARGS|NGX_CONF_TAKE1,
-      ngx_http_stream_server_traffic_status_display,
-      0,
-      0,
-      NULL },
-
-    { ngx_string("stream_server_traffic_status_display_format"),
-      NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_CONF_TAKE1,
-      ngx_conf_set_enum_slot,
-      NGX_HTTP_LOC_CONF_OFFSET,
-      offsetof(ngx_http_stream_server_traffic_status_loc_conf_t, format),
-      &ngx_http_stream_server_traffic_status_display_format },
-
-    { ngx_string("stream_server_traffic_status_display_jsonp"),
-      NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_CONF_TAKE1,
-      ngx_conf_set_str_slot,
-      NGX_HTTP_LOC_CONF_OFFSET,
-      offsetof(ngx_http_stream_server_traffic_status_loc_conf_t, jsonp),
       NULL },
 
     { ngx_string("stream_server_traffic_status_average_method"),
